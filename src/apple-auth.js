@@ -93,7 +93,8 @@ class AppleAuth {
                     }).then((response) => {
                         resolve(response.data);
                     }).catch((response) => {
-                        reject("AppleAuth Error - An error occurred while getting response from Apple's servers: " + response);
+                        const message = response.data + " Response:" + response;
+                        reject("AppleAuth Error - An error occurred while getting response from Apple's servers: " + message);
                     });
                 }).catch((err) => {
                     reject(err);
